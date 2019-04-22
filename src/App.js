@@ -1,28 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Routes from './routes' // Não precisa finalizar com /index pois por padrão o React busca o index.js da pasta
 
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+    return <Routes />; // Além da forma que é chamado com ReactDOM.render, pode ser chamado a classe que extende Component desta forma
   }
 }
+/**
+ * A classe acima também poderia ser chamada assim: (Pois é um objeto stateless)
+ * function App () {
+ *    return <Routes /> 
+ * };
+ * Ou
+ * const App = () => <Routes />;
+ */
 
 export default App;
+
