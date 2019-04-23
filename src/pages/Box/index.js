@@ -26,7 +26,7 @@ export default class Box extends Component {
         io.on('file', data => { // file é o tipo do arquivo, e data é o arquivo 
             // Para adicionar um arquivo no state, é necessário pegar o box inteiro, copiar tudo de novo o que ele já tem com a adição do arquivo novo
             // Segue-se o conceito de imutabilidade, que não altera a informação mas cria uma nova informação
-            this.setState({ box: { ... this.state.box, files: [data, ... this.state.box.files]} }) // Coloca o data no inicio da fila
+            this.setState({ box: { ... this.state.box, files: [data, ... this.state.box.files]} }); // Coloca o data no inicio da fila
         });
     }
 
