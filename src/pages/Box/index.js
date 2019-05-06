@@ -24,7 +24,8 @@ export default class Box extends Component {
         const io  = socket("https://omnistack-backend9.herokuapp.com"); // Abre conexão
         io.emit("connectRoom", box); //Envia uma mensagem. Lá no back-end, "connectRoom é é a mensagem de conexão do usuário em uma box". Agora este socket ouvirá todas as mensagens dessa box
         io.on("file", data => { 
-            console.log(data);
+            //console.log(data);
+            this.setState({ box: { ... this.state.box, files: [data, ... this.state.box.files]}});
         });
     }
 
